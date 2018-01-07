@@ -10,7 +10,6 @@
 		var maxRang = 80;
 		var minRang = 15;
 		var isShake = false;
-		box.innerHTML += Math.max(dis);
 		if(typeof lastX == 'undefined'){
 			lastX = x;
 			lastY = y;
@@ -19,6 +18,7 @@
 		}
 		
 		var dis = Math.abs(x - lastX) + Math.abs(y - lastY) + Math.abs(z - lastZ);
+		console.log(dis);
 		box.innerHTML += Math.max(dis);
 		 if(dis > maxRang){
 		 	isShake = true;
