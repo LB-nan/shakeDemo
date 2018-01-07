@@ -25,7 +25,7 @@
 		 }
 		 if(dis < minRang && isShake){
 		 	isShake = false;
-		box.innerHTML = Math.max(dis);
+			box.innerHTML = Math.max(dis);
 		 	alert("摇完了");
 		 }
 		 
