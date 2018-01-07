@@ -16,7 +16,7 @@
 			lastY = y;
 			lastZ = z;
 			return;
-		}
+		}  
 		var dis = Math.abs(x - lastX) + Math.abs(y - lastY) +
 		Math.abs(z - lastZ);
 		if(dis > maxRang) {
