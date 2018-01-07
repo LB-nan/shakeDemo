@@ -1,23 +1,55 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>陀螺仪</title>
-		<style>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Document</title><style>
 			html,body{height: 100%;}
 			#div{
 				width:80%;
 				height: 30%;
 				background: red;
 				color: white;
-				font-size: 20px;
+				font-size: 100px;
 			}
 		</style>
-	</head>
-	<script type="text/javascript" src="js/m.Tween.js"></script>
-	<body>
-		<div id="div"></div>
-		<script src="js/index.js"></script>
-	</body>
+</head>
+<body>
+	<div id="div"></div>
+<script type="text/javascript">
+(function(){
+	var lastX;
+	var lastY;
+	var lastZ;
+	var maxRang = 80;
+	var minRang = 10;
+	var isShake = false;
+	window.addEventListener('devicemotion', function(e) {
+		var motion = e.accelerationIncludingGravity;
+		var x = Math.round(motion.x);
+		var y = Math.round(motion.y);
+		var z = Math.round(motion.z);
+		if(typeof lastX == "undefined"){
+			lastX = x;
+			lastY = y;
+			lastZ = z;
+			return;
+		}
+		var dis = Math.abs(x - lastX) + Math.abs(y - lastY) +
+		Math.abs(z - lastZ);
+		if(dis > maxRang) {
+			isShake = true;
+		}
+		if(dis < minRang && isShake) {
+			isShake = false;
+			//执行 摇一摇之后，要操作的内容
+			alert("您晃动了手机");
+		}
+		lastX = x;
+		lastY = y;
+		lastZ = z;
+	});
+})();
+</script>
+</body>
 </html>
