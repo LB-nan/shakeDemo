@@ -10,6 +10,7 @@
 		var maxRang = 80;
 		var minRang = 15;
 		var isShake = false;
+		box.innerHTML = dis;
 		if(typeof lastX == 'undefined'){
 			lastX = x;
 			lastY = y;
