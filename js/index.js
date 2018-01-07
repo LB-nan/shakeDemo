@@ -24,7 +24,7 @@
 		if(dis < minRang && isShake) {
 			isShake = false;
 			//执行 摇一摇之后，要操作的内容
-			alert("您晃动了手机");
+			box.innerHTML = dis;
 		}
 		lastX = x;
 		lastY = y;
