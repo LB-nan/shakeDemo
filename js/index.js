@@ -7,8 +7,8 @@
 		var x = Math.round(motion.x);
 		var y = Math.round(motion.y);
 		var z = Math.round(motion.z);
-		var maxRong = 80;
-		var minRong = 15;
+		var maxRang = 80;
+		var minRang = 15;
 		var isShake = false;
 		if(typeof lastX == 'undefined'){
 			lastX = x;
@@ -18,12 +18,13 @@
 		}
 		
 		var dis = Math.abs(x - lastX) + Math.abs(y - lastY) + Math.abs(z - lastZ);
-		 
-		 if(dis > maxRong){
+		 box.innerHTML = dis;
+		 if(dis > maxRang){
 		 	isShake = true;
 		 }
-		 if(dis < minRong && isShake){
+		 if(dis < minRang && isShake){
 		 	isShake = false;
+		 	box.innerHTML = dis;
 		 	alert("摇完了");
 		 }
 		 
