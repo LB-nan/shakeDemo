@@ -18,19 +18,17 @@
 		}
 		
 		var dis = Math.abs(x - lastX) + Math.abs(y - lastY) + Math.abs(z - lastZ);
-		console.log(dis);
-		box.innerHTML += Math.max(dis);
-		 if(dis > maxRang){
-		 	isShake = true;
-		 }
-		 if(dis < minRang && isShake){
-		 	isShake = false;
-			box.innerHTML += Math.max(dis);
-		 	alert("摇完了");
-		 }
-		 
+		if(dis > maxRang) {
+			isShake = true;
+		}
+		if(dis < minRang && isShake) {
+			isShake = false;
+			//执行 摇一摇之后，要操作的内容
+			alert("您晃动了手机");
+		}
 		lastX = x;
 		lastY = y;
 		lastZ = z;
+		
 	})
 })()
