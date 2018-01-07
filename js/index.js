@@ -10,7 +10,7 @@
 		var maxRang = 80;
 		var minRang = 15;
 		var isShake = false;
-		box.innerHTML = dis;
+		box.innerHTML = Math.max(dis);
 		if(typeof lastX == 'undefined'){
 			lastX = x;
 			lastY = y;
@@ -19,13 +19,13 @@
 		}
 		
 		var dis = Math.abs(x - lastX) + Math.abs(y - lastY) + Math.abs(z - lastZ);
-		 box.innerHTML = dis;
+		box.innerHTML = Math.max(dis);
 		 if(dis > maxRang){
 		 	isShake = true;
 		 }
 		 if(dis < minRang && isShake){
 		 	isShake = false;
-		 	box.innerHTML = dis;
+		box.innerHTML = Math.max(dis);
 		 	alert("摇完了");
 		 }
 		 
